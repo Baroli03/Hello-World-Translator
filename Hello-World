@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+int main(){
+	char command[100];
+
+// Configura o locale para suportar caracteres de várias línguas
+	setlocale(LC_ALL, "");
+
+// Loop principal que continua até o usuário optar por sair
+	while (1){
+  
+    // Solicita ao usuário um comando
+		printf("-> ");
+		scanf("%99s", command);
+
+    // Caso o Comando for igual a -help ou igual a -h mostra o menu de ajuda
+		if (strcmp(command, "-help") == 0 || strcmp(command, "-h") == 0) {
+            printf("\nComando Válidos:\n"
+                   "[--pt] ou [-1]: Saudação em português.\n"
+                   "[--en] ou [-2]: Saudação em inglês.\n"
+                   "[--es] ou [-3]: Saudação em espanhol.\n"
+                   "[--fr] ou [-4]: Saudação em francês.\n"
+                   "[--it] ou [-5]: Saudação em italiano.\n"
+                   "[--de] ou [-6]: Saudação em alemão.\n"
+                   "[--jp] ou [-7]: Saudação em japonês.\n"
+                   "[--ch] ou [-8]: Saudação em chinês tradicional.\n"
+                   "[--ru] ou [-9]: Saudação em russo.\n"
+                   "[--version] ou [-v]: Mostra a versão atual do programa.\n"
+                   "[--exit] ou [-e]: Sair do Programa.\n");
+
+  
+
+  // Comando para saudação em português
+  } else if (strcmp(command, "--pt") == 0 || strcmp(command, "-1") == 0){
+    	printf("\nOla mundo!\n");
+
+  // Comando para saudação em inglês
+	} else if (strcmp(command, "--en") == 0 || strcmp(command, "-2") == 0){
+		printf("\nHello, world!\n");
+
+  // Comando para saudação em espanhol
+	} else if (strcmp(command, "--es") == 0 || strcmp(command, "-3") == 0){
+		printf("\n¡Hola, mundo!\n");
+
+  // Comando para saudação em francês
+	} else if (strcmp(command, "--fr") == 0 || strcmp(command, "-4") == 0){
+		printf("\nBonjour, le monde !\n");
+
+  // Comando para saudação em italiano
+	} else if (strcmp(command, "--it") == 0 || strcmp(command, "-5") == 0){
+		printf("\nCiao, mondo!\n");
+
+  // Comando para saudação em alemão
+	} else if (strcmp(command, "--de") == 0 || strcmp(command, "-6") == 0){
+		printf("\nHallo, Welt!\n");
+
+  // Comando para saudação em Japonês
+	} else if (strcmp(command, "--jp") == 0 || strcmp(command, "-7") == 0){
+		printf("\nKonnichiwa, sekai!\n");
+
+  // Comando para saudação em chines
+	} else if (strcmp(command, "--ch") == 0 || strcmp(command, "-8") == 0){
+		printf("\nNi hao, shìjiè!\n");
+
+  // Comando para saudação em Russo
+	} else if (strcmp(command, "--ru") == 0 || strcmp(command, "-9") == 0){
+		printf("\nPrivet, mir!\n");
+
+  // Comando para saber a versão do aplicativo
+	} else if (strcmp(command, "--version") == 0 || strcmp(command, "-v") == 0){
+		printf("\nVersão Atual  A1.0\n");
+
+  // Comando para finalizar o aplicativo
+	} else if (strcmp(command, "--exit") == 0 || strcmp(command, "-e") == 0){
+		printf("\nFinalizando Programa...");
+		break;	
+
+  // Caso o comando não seja Valido Retorna uma Opção de ajuda
+	} else {
+		printf("\nComando Invalido, tente -help ou -h\n");
+	}
+	}	
+}
